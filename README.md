@@ -247,7 +247,7 @@ P cores still win in execution time! That must mean they are better...
 Wait, **P cores don't win in CPL**? What? Indeed they don't. 
 
 Most people assume E cores are just low-power, weak silicon, but that's far from reality. They have a shorter pipeline, 
-and are overall simpler in most regards, but this simplicity makes them great for raw througput.
+and are overall simpler in most regards, but this simplicity makes them great for raw throughput.
 
 Also, if you think about it, E cores take a small die area, allowing Intel to fit plenty of cores in a single SOC. 
 But what tasks take advantage of many cores? Usually parallel ones, which are, again, throughput-based. 
@@ -255,7 +255,8 @@ But what tasks take advantage of many cores? Usually parallel ones, which are, a
 For instance, think on multiple threads iterating over array. The workload is pretty predictable, and won't take advantage
 of the OoO advantages that P cores grant, so **E cores can be more performant (per cycle)**, plus use less power! Great!
 
-So, in short, P cores are great at chaos (branches, OoO, speculative execution...) and brute-forcing speed with high 
-frequency while **E cores can achieve very high per-cycle throughput in predictable, parallel workloads**, but are clocked slower. 
+So, in short:
+* **P cores are great at chaos** (branches, OoO, speculative execution...) and brute-forcing speed with high frequency.
+* **E cores can achieve very high per-cycle throughput in predictable, parallel workloads**, but are clocked slower. 
 
 
