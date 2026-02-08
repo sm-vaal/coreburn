@@ -1,13 +1,14 @@
 #ifdef _WIN32
     #include <windows.h>
 #else
+    #define _GNU_SOURCE
     #include <pthread.h>
     #include <sched.h>
     #include <errno.h>
 #endif
 
 #include <stdint.h>
-
+#include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
@@ -89,7 +90,7 @@ int main(int argc, char** argv) {
         {"-v128l", "10^9", "vect128 latency",        bench_latency_v128,          loadLatency_v128},
         {"-v128t", "10^9", "vect128 throughput",     bench_throughput_v128,       loadThroughput_v128},
         {"-v256l", "10^9", "vect256 latency",        bench_latency_v256,          loadLatency_v256},
-        {"-v256t", "10^9", "vect256 througput",      bench_throughput_v256,       loadThroughput_v256},
+        {"-v256t", "10^9", "vect256 throughput",      bench_throughput_v256,       loadThroughput_v256},
         {"-v512l", "10^9", "vect512 latency",        bench_latency_v512,          loadLatency_v512},
         {"-v512t", "10^9", "vect512 throughput",     bench_throughput_v512,       loadThroughput_v512},
 
